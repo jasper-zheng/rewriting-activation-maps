@@ -17,10 +17,16 @@ Network Bending showed that the transformations of spatial activation maps in GA
 
 Both of these works indicated that the knowledge encoded in a deep neural network is semantically related to the spatial information in its feature maps. And manipulating this information can create results diverse from the original domain. Therefore, we asked:  
  * Could we introduce an additional network to learn the spatial distribution of information in a specific layer in a trained GAN model? 
- * And with this additional network, if we could directly generate feature maps from a given real image and create image-to-image translation?
+ * And with this additional network, if we could directly generate feature maps from a given real image and create image-to-image translation?  
+
+## Implementation  
+
+The StyleGAN2 implementation borrowed heavily from [moono/stylegan2-tf-2.x](https://github.com/moono/stylegan2-tf-2.x)  
 
 ## Further Study  
 
 The current stage of the project only tested the proposed training system on limited layers (i.e. after the 16x16 synthesise block) in a few trained models (i.e. [Frea Buckler artwork](https://twitter.com/dvsch/status/1255885874560225284), [MetFaces](https://twitter.com/ak92501/status/1282466682267676675), [FFHQ](https://github.com/NVlabs/ffhq-dataset), [A Database of Leaf Images](https://data.mendeley.com/datasets/hb74ynkjcn/1)). Future studies might scale up the experiments on different layers in different networks. They might also focus on testing the training system with different settings, or inserting jittering layers and mean filter layers to improve the output quality.  
 
-The StyleGAN2 implementation borrowed heavily from [moono/stylegan2-tf-2.x](https://github.com/moono/stylegan2-tf-2.x)  
+## Reference  
+
+

@@ -56,7 +56,6 @@ Figure 02: Deploy the Encoder
 
 As shown in Figure 02, after the encoder is trained, it is migrated to replace the synthesise block before the specific layer. The assembled system takes images as input, and translates the images into the domain of the original StyleGAN2 model.  
 
-
 ## Results  
 
 ###### Network appended to model trained on [FFHQ](https://github.com/NVlabs/ffhq-dataset)   
@@ -114,6 +113,18 @@ Besides, the latent vectors still function after the StyleGAN2 model is appended
 
 The current stage of the project only tested the proposed training system on limited layers (i.e. after the 16x16 synthesise block) in a few trained models (i.e. [Frea Buckler artwork](https://twitter.com/dvsch/status/1255885874560225284), [MetFaces](https://twitter.com/ak92501/status/1282466682267676675), [FFHQ](https://github.com/NVlabs/ffhq-dataset), [A Database of Leaf Images](https://data.mendeley.com/datasets/hb74ynkjcn/1)). Future studies might scale up the experiments on different layers in different networks. They might also focus on testing the training system with different settings, or inserting jittering layers and mean filter layers to improve the output quality.  
 
-## Reference  
 
-The StyleGAN2 implementation borrowed heavily from [moono/stylegan2-tf-2.x](https://github.com/moono/stylegan2-tf-2.x)   
+## Implementation References  
+
+#### Requirements  
+
+ * tensorflow==2.3.0  
+ * tensorflow-addons==0.13.0  
+ * numpy==1.19.0  
+
+#### Resources  
+
+ * The StyleGAN2 implementation borrowed heavily from [moono/stylegan2-tf-2.x](https://github.com/moono/stylegan2-tf-2.x)     
+ * Pre-trained StyleGAN2 Models: [Awesome Pretrained StyleGAN2](https://github.com/justinpinkney/awesome-pretrained-stylegan2)   
+ * Self-trained StyleGAN2 Model on Leaf Dataset: [A Database of Leaf Images](https://data.mendeley.com/datasets/hb74ynkjcn/1)   
+ * Real-time implementation utilising [Colab's Python to Javascript APIs](https://colab.research.google.com/notebooks/snippets/advanced_outputs.ipynb)  

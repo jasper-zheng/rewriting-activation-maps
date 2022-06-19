@@ -90,6 +90,9 @@ Both of these works indicated that the knowledge encoded in a deep neural networ
 The method is based on the hypothesis that if we can reversely downscale a generated image into activation maps in an earlier synthesise layer, we are able to reproduce the same generated image.  
 
 <img src='./docs/graph_encoer_network.png'></img>  
+Figure 01: Training the Encoder  
+
+As shown in Figure 01, the training system takes the output images from a StyleGAN2 model as the encoder's input. The encoder downscales the images to rewritten activation maps, which are then compared with the intermediate activation maps extracted during StyleGAN2 inference. The loss is calculated by the pixel Euclidean Distances between the real activation maps and the rewritten activation maps. 
 
 The StyleGAN2 implementation borrowed heavily from [moono/stylegan2-tf-2.x](https://github.com/moono/stylegan2-tf-2.x)   
 

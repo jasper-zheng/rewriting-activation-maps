@@ -15,58 +15,6 @@ The proposed system was implemented on a couple of pre-trained models. And the r
 
 In addition, a real-time interactive system was built to facilitate human control of the network.   
 
-## Results  
-
-
-
-
-###### Network migrated to model trained on [FFHQ](https://github.com/NVlabs/ffhq-dataset)   
-
-<table> 
-  <tr>
-    <td> <img src='./docs/ffhq_01.png'></td>
-    <td> <img src='./docs/ffhq_02.png'></td>
-    <td> <img src='./docs/ffhq_03.png'></td>
-  </tr>
-</table>   
-
-
-###### Network migrated to model trained on [Frea Buckler artwork](https://twitter.com/dvsch/status/1255885874560225284)  
-
-<table> 
-  <tr>
-    <td> <img src='./docs/frea_01.png'></td>
-    <td> <img src='./docs/frea_02.png'></td>
-    <td> <img src='./docs/frea_03.png'></td>
-  </tr>
-</table>  
-
-
-###### Network migrated to model trained on [MetFaces](https://twitter.com/ak92501/status/1282466682267676675)  
-
-<table> 
-  <tr>
-    <td> <img src='./docs/metface_01.png'></td>
-    <td> <img src='./docs/metface_02.png'></td>
-    <td> <img src='./docs/metface_03.png'></td>
-  </tr>
-</table>  
-
-
-
-###### Network migrated to model trained on [A Database of Leaf Images](https://data.mendeley.com/datasets/hb74ynkjcn/1)  
-
-
-<table> 
-  <tr>
-    <td> <img src='./docs/leaf_01.png'></td>
-    <td> <img src='./docs/leaf_02.png'></td>
-    <td> <img src='./docs/leaf_03.png'></td>
-  </tr>
-</table>   
-
-
-
 ###### Real-time Inference (high-resolution 1024x1024)  
 
 
@@ -76,6 +24,8 @@ https://user-images.githubusercontent.com/74963879/174460792-5df1c0f0-763a-44ff-
 ## Related Study and Motivation  
 
 In addition to improving the model performance and quality, modern approaches also focus on manipulating the trained network to produce outputs that are diverse from the original dataset.  
+
+A previous study on [StyleGAN Encoder](https://github.com/eladrich/pixel2style2pixel) demonstrated a variety of facial image-to-image translation tasks, which encode real images into extended latent space W+. 
 
 [Model Rewriting](https://github.com/davidbau/rewriting) showed that editing a network's internal rules allows us to map new elements to the generated image intentionally.
 
@@ -92,12 +42,66 @@ The method is based on the hypothesis that if we can reversely downscale a gener
 <img src='./docs/graph_encoer_network.png'></img>  
 Figure 01: Training the Encoder  
 
-As shown in Figure 01, the training system takes the output images from a StyleGAN2 model as the encoder's input. The encoder downscales the images to rewritten activation maps, which are then compared with the intermediate activation maps extracted during StyleGAN2 inference. The loss is calculated by the pixel Euclidean Distances between the real activation maps and the rewritten activation maps. 
+As shown in Figure 01, the training system takes the output images from a StyleGAN2 model as the encoder's input. The encoder downscales the images to rewritten activation maps, which are then compared with a specific layer of intermediate activation maps extracted during StyleGAN2 inference. The loss is calculated by the pixel Euclidean Distances between the real activation maps and the rewritten activation maps. 
 
-<img src='./docs/graph_migrated_network.png'></img>  
+<img src='./docs/graph_deployed_network.png'></img>  
 Figure 02: Deploy the Encoder  
 
-The StyleGAN2 implementation borrowed heavily from [moono/stylegan2-tf-2.x](https://github.com/moono/stylegan2-tf-2.x)   
+As shown in Figure 02, after the encoder is trained, it is migrated to replace the synthesise block before the specific layer. The assembled system takes images as input, and translates the images into the domain of the original StyleGAN2 model.  
+
+
+## Results  
+
+###### Network appended to model trained on [FFHQ](https://github.com/NVlabs/ffhq-dataset)   
+
+<table> 
+  <tr>
+    <td> <img src='./docs/ffhq_01.png'></td>
+    <td> <img src='./docs/ffhq_02.png'></td>
+    <td> <img src='./docs/ffhq_03.png'></td>
+  </tr>
+</table>   
+
+
+###### Network appended to model trained on [Frea Buckler artwork](https://twitter.com/dvsch/status/1255885874560225284)  
+
+<table> 
+  <tr>
+    <td> <img src='./docs/frea_01.png'></td>
+    <td> <img src='./docs/frea_02.png'></td>
+    <td> <img src='./docs/frea_03.png'></td>
+  </tr>
+</table>  
+
+
+###### Network appended to model trained on [MetFaces](https://twitter.com/ak92501/status/1282466682267676675)  
+
+<table> 
+  <tr>
+    <td> <img src='./docs/metface_01.png'></td>
+    <td> <img src='./docs/metface_02.png'></td>
+    <td> <img src='./docs/metface_03.png'></td>
+  </tr>
+</table>  
+
+
+
+###### Network appended to model trained on [A Database of Leaf Images](https://data.mendeley.com/datasets/hb74ynkjcn/1)  
+
+
+<table> 
+  <tr>
+    <td> <img src='./docs/leaf_01.png'></td>
+    <td> <img src='./docs/leaf_02.png'></td>
+    <td> <img src='./docs/leaf_03.png'></td>
+  </tr>
+</table>   
+
+## Compare with Other Image-to-Image Models  
+
+Different from [CycleGAN](https://arxiv.org/abs/1703.10593) and [Pix2Pix](https://github.com/NVIDIA/pix2pixHD), our method can be migrated to most of the pre-trained StyleGAN2 models without any extra data. However, this method restricted the input images to domains that are similar to the pre-trained model. For example, an eye is generated only if the input image has an element that looks like an eye.  
+
+Besides, the latent vectors still function after the StyleGAN2 model is appended with the migrated encoder. Therefore, one input image may have different output depending on the latent vector, and it can perform latent space walking during the real-time inference.  
 
 ## Further Study  
 
@@ -105,4 +109,4 @@ The current stage of the project only tested the proposed training system on lim
 
 ## Reference  
 
-
+The StyleGAN2 implementation borrowed heavily from [moono/stylegan2-tf-2.x](https://github.com/moono/stylegan2-tf-2.x)   

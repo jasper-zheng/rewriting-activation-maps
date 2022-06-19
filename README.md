@@ -114,7 +114,7 @@ Besides, the latent vectors still function after the StyleGAN2 model is appended
 The current stage of the project only tested the proposed training system on limited layers (i.e. after the 16x16 synthesise block) in a few trained models (i.e. [Frea Buckler artwork](https://twitter.com/dvsch/status/1255885874560225284), [MetFaces](https://twitter.com/ak92501/status/1282466682267676675), [FFHQ](https://github.com/NVlabs/ffhq-dataset), [A Database of Leaf Images](https://data.mendeley.com/datasets/hb74ynkjcn/1)). Future studies might scale up the experiments on different layers in different networks. They might also focus on testing the training system with different settings, or inserting jittering layers and mean filter layers to improve the output quality.  
 
 
-## Rhird-party Resources and References  
+## Third-party Resources and References  
 
 #### Requirements  
 

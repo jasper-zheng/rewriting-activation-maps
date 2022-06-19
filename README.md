@@ -2,7 +2,7 @@
 ###### Coding Three: Exploring Machine Intelligence   
 # Rewriting Activation Maps
 
-<a href="https://colab.research.google.com/github/jasper-zheng/rewriting-activation-maps/blob/main/Rewriting_Activation_Maps.ipynb"><img src="https://colab.research.google.com/assets/colab-badge.svg" height=22.5></a>  
+<a href="https://colab.research.google.com/github/jasper-zheng/rewriting-activation-maps/blob/main/Rewriting_Activation_Maps.ipynb" target=”_blank”><img src="https://colab.research.google.com/assets/colab-badge.svg" height=22.5></a>  
 
 
 <img src='./docs/leaf.jpg' width='800px'>

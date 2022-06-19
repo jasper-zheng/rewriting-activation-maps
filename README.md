@@ -1,11 +1,77 @@
+
+###### Coding Three: Exploring Machine Intelligence   
 # Rewriting Activation Maps
 
-## Summary  
-This project proposed a novel training system appended to StyleGAN2 architecture, enabling a pre-trained StyleGAN2 model to perform image-to-image translation, even if the input images are not in the original domain. The training system is based on an encoder network that downscales the generated images from a StyleGAN2 model and matches the distribution of the earlier feature maps in the same model. After training, the encoder network is migrated to the StyleGAN2 model.   
 
-The proposed system was implemented on a couple of pre-trained models. And the results showed that it's able to create meaningful image-to-image translation similar to pix2pix and other state-of-the-art image translation models.  
+
+<img src='./docs/leaf.jpg' width='800px'>
+
+**An Encoder Network that Enables a Pre-trained StyleGAN2 Model to Perform Image-to-image Translation**  
+Jasper Zheng (Shuoyang) / 21009460  
+
+This project proposed a novel training system appended to [StyleGAN2](https://github.com/NVlabs/stylegan2) architecture, enabling a pre-trained StyleGAN2 model to perform image-to-image translation, even if the input images are not in the original domain. The training system is based on an encoder network that downscales the generated images from a StyleGAN2 model and matches the distribution of the earlier feature maps in the same model (i.e. predict feature maps given a generated image). After training, the encoder network is migrated to the StyleGAN2 model.   
+
+The proposed system was implemented on a couple of pre-trained models. And the results showed that it's able to create meaningful image-to-image translation different with [pix2pixHD](https://github.com/NVIDIA/pix2pixHD) and other state-of-the-art image translation models.  
 
 In addition, a real-time interactive system was built to facilitate human control of the network.   
+
+## Results  
+
+
+
+
+###### Network migrated to model trained on [FFHQ](https://github.com/NVlabs/ffhq-dataset)   
+
+<table> 
+  <tr>
+    <td> <img src='./docs/ffhq_01.png'></td>
+    <td> <img src='./docs/ffhq_02.png'></td>
+    <td> <img src='./docs/ffhq_03.png'></td>
+  </tr>
+</table>   
+
+
+###### Network migrated to model trained on [Frea Buckler artwork](https://twitter.com/dvsch/status/1255885874560225284)  
+
+<table> 
+  <tr>
+    <td> <img src='./docs/frea_01.png'></td>
+    <td> <img src='./docs/frea_02.png'></td>
+    <td> <img src='./docs/frea_03.png'></td>
+  </tr>
+</table>  
+
+
+###### Network migrated to model trained on [MetFaces](https://twitter.com/ak92501/status/1282466682267676675)  
+
+<table> 
+  <tr>
+    <td> <img src='./docs/metface_01.png'></td>
+    <td> <img src='./docs/metface_02.png'></td>
+    <td> <img src='./docs/metface_03.png'></td>
+  </tr>
+</table>  
+
+
+
+###### Network migrated to model trained on [A Database of Leaf Images](https://data.mendeley.com/datasets/hb74ynkjcn/1)  
+
+
+<table> 
+  <tr>
+    <td> <img src='./docs/leaf_01.png'></td>
+    <td> <img src='./docs/leaf_02.png'></td>
+    <td> <img src='./docs/leaf_03.png'></td>
+  </tr>
+</table>   
+
+
+
+###### Real-time Inference (high-resolution 1024x1024)  
+
+
+https://user-images.githubusercontent.com/74963879/174460792-5df1c0f0-763a-44ff-8894-cc5859dd5191.mp4
+
 
 ## Related Study and Motivation  
 
@@ -21,7 +87,7 @@ Both of these works indicated that the knowledge encoded in a deep neural networ
 
 ## Implementation  
 
-The StyleGAN2 implementation borrowed heavily from [moono/stylegan2-tf-2.x](https://github.com/moono/stylegan2-tf-2.x)  
+The StyleGAN2 implementation borrowed heavily from [moono/stylegan2-tf-2.x](https://github.com/moono/stylegan2-tf-2.x)   
 
 ## Further Study  
 

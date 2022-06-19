@@ -9,7 +9,7 @@
 **An Encoder Network that Enables a Pre-trained StyleGAN2 Model to Perform Image-to-image Translation**  
 Jasper Zheng (Shuoyang) / 21009460  
 
-This project proposed a novel training system appended to [StyleGAN2](https://github.com/NVlabs/stylegan2) architecture, enabling a pre-trained StyleGAN2 model to perform image-to-image translation, even if the input images are not in the original domain. The training system is based on an encoder network that downscales the generated images from a StyleGAN2 model and matches the distribution of the earlier feature maps in the same model (i.e. predict feature maps given a generated image). After training, the encoder network is migrated to the StyleGAN2 model.   
+This project proposed a novel training system appended to [StyleGAN2](https://github.com/NVlabs/stylegan2) architecture, enabling a pre-trained StyleGAN2 model to perform image-to-image translation, even if the input images are not in the original domain. The training system is based on an encoder network that downscales the generated images from a StyleGAN2 model and matches the distribution of the earlier activation maps in the same model (i.e. predict feature maps given a generated image). After training, the encoder network is migrated to the StyleGAN2 model.   
 
 The proposed system was implemented on a couple of pre-trained models. And the results showed that it's able to create meaningful image-to-image translation different with [pix2pixHD](https://github.com/NVIDIA/pix2pixHD) and other state-of-the-art image translation models.  
 
@@ -85,7 +85,11 @@ Both of these works indicated that the knowledge encoded in a deep neural networ
  * Could we introduce an additional network to learn the spatial distribution of information in a specific layer in a trained GAN model? 
  * And with this additional network, if we could directly generate feature maps from a given real image and create image-to-image translation?  
 
-## Implementation  
+## Appended Encoder Network  
+
+The method is based on the hypothesis that if we can reversely downscale a generated image into activation maps in an earlier synthesise layer, we are able to reproduce the same generated image.  
+
+<img src='./docs/graph.png'></img>  
 
 The StyleGAN2 implementation borrowed heavily from [moono/stylegan2-tf-2.x](https://github.com/moono/stylegan2-tf-2.x)   
 

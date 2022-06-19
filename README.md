@@ -94,6 +94,9 @@ Figure 01: Training the Encoder
 
 As shown in Figure 01, the training system takes the output images from a StyleGAN2 model as the encoder's input. The encoder downscales the images to rewritten activation maps, which are then compared with the intermediate activation maps extracted during StyleGAN2 inference. The loss is calculated by the pixel Euclidean Distances between the real activation maps and the rewritten activation maps. 
 
+<img src='./docs/graph_migrated_network.png'></img>  
+Figure 02: Deploy the Encoder  
+
 The StyleGAN2 implementation borrowed heavily from [moono/stylegan2-tf-2.x](https://github.com/moono/stylegan2-tf-2.x)   
 
 ## Further Study  

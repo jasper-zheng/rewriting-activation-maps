@@ -132,9 +132,7 @@ The current stage of the project only tested the proposed training system on lim
 #### References  
 
 [1] E. Richardson et al., “Encoding in Style: a StyleGAN Encoder for Image-to-Image Translation,” *arXiv:2008.00951 [cs]*, Apr. 2021, Accessed: Jun. 19, 2022. [Online]. Available: https://arxiv.org/abs/2008.00951  
-‌
-[2] D. Bau, S. Liu, T. Wang, J.-Y. Zhu, A. Torralba, and M. Csail, “Rewriting a Deep Generative Model,” *arXiv:2007.15646 [cs]*, Jul. 2020. Accessed: Jun. 19, 2022. [Online]. Available: https://arxiv.org/pdf/2007.15646
-
+[2] D. Bau, S. Liu, T. Wang, J.-Y. Zhu, A. Torralba, and M. Csail, “Rewriting a Deep Generative Model,” *arXiv:2007.15646 [cs]*, Jul. 2020. Accessed: Jun. 19, 2022. [Online]. Available: https://arxiv.org/pdf/2007.15646  
 [3] T. Broad, F. F. Leymarie, and M. Grierson, “Network Bending: Expressive Manipulation of Deep Generative Models,” *arXiv:2005.12420 [cs]*, Mar. 2021, Accessed: Jun. 19, 2022. [Online]. Available: https://arxiv.org/abs/2005.12420  
 
 

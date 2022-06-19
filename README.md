@@ -20,7 +20,12 @@ In addition, a real-time interactive system was built to facilitate human contro
 ###### Real-time Inference (high-resolution 1024x1024)  
 
 
-https://user-images.githubusercontent.com/74963879/174460792-5df1c0f0-763a-44ff-8894-cc5859dd5191.mp4
+https://user-images.githubusercontent.com/74963879/174460792-5df1c0f0-763a-44ff-8894-cc5859dd5191.mp4  
+
+###### Rendered Inference   
+
+https://user-images.githubusercontent.com/74963879/174490605-5373091c-1b51-45cb-9300-d3c756310823.mp4  
+
 
 
 ## Related Study and Motivation  

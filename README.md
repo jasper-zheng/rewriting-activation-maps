@@ -77,9 +77,9 @@ https://user-images.githubusercontent.com/74963879/174460792-5df1c0f0-763a-44ff-
 
 In addition to improving the model performance and quality, modern approaches also focus on manipulating the trained network to produce outputs that are diverse from the original dataset.  
 
-Model Rewriting showed that editing a network's internal rules allows us to map new elements to the generated image intentionally.
+[Model Rewriting](https://github.com/davidbau/rewriting) showed that editing a network's internal rules allows us to map new elements to the generated image intentionally.
 
-Network Bending showed that the transformations of spatial activation maps in GANs could create meaningful manipulations in the generated images. 
+[Network Bending](https://github.com/terrybroad/network-bending) showed that the transformations of spatial activation maps in GANs could create meaningful manipulations in the generated images. 
 
 Both of these works indicated that the knowledge encoded in a deep neural network is semantically related to the spatial information in its feature maps. And manipulating this information can create results diverse from the original domain. Therefore, we asked:  
  * Could we introduce an additional network to learn the spatial distribution of information in a specific layer in a trained GAN model? 

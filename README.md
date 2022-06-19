@@ -32,11 +32,11 @@ https://user-images.githubusercontent.com/74963879/174490605-5373091c-1b51-45cb-
 
 In addition to improving the model performance and quality, modern approaches also focus on manipulating the trained network to produce outputs that are diverse from the original dataset.  
 
-A previous study on [StyleGAN Encoder](https://github.com/eladrich/pixel2style2pixel) demonstrated a variety of facial image-to-image translation tasks, which encode real images into extended latent space W+. 
+A previous study on [StyleGAN Encoder](https://github.com/eladrich/pixel2style2pixel) [1] demonstrated a variety of facial image-to-image translation tasks, which encode real images into extended latent space W+. 
 
-[Model Rewriting](https://github.com/davidbau/rewriting) showed that editing a network's internal rules allows us to map new elements to the generated image intentionally.
+[Model Rewriting](https://github.com/davidbau/rewriting) [2] showed that editing a network's internal rules allows us to map new elements to the generated image intentionally.
 
-[Network Bending](https://github.com/terrybroad/network-bending) showed that the transformations of spatial activation maps in GANs could create meaningful manipulations in the generated images. 
+[Network Bending](https://github.com/terrybroad/network-bending) [3] showed that the transformations of spatial activation maps in GANs could create meaningful manipulations in the generated images. 
 
 Both of these works indicated that the knowledge encoded in a deep neural network is semantically related to the spatial information in its feature maps. And manipulating this information can create results diverse from the original domain. Therefore, we asked:  
  * Could we introduce an additional network to learn the spatial distribution of information in a specific layer in a trained GAN model? 
@@ -114,7 +114,7 @@ Besides, the latent vectors still function after the StyleGAN2 model is appended
 The current stage of the project only tested the proposed training system on limited layers (i.e. after the 16x16 synthesise block) in a few trained models (i.e. [Frea Buckler artwork](https://twitter.com/dvsch/status/1255885874560225284), [MetFaces](https://twitter.com/ak92501/status/1282466682267676675), [FFHQ](https://github.com/NVlabs/ffhq-dataset), [A Database of Leaf Images](https://data.mendeley.com/datasets/hb74ynkjcn/1)). Future studies might scale up the experiments on different layers in different networks. They might also focus on testing the training system with different settings, or inserting jittering layers and mean filter layers to improve the output quality.  
 
 
-## Implementation References  
+## Rhird-party Resources and References  
 
 #### Requirements  
 
@@ -128,3 +128,13 @@ The current stage of the project only tested the proposed training system on lim
  * Pre-trained StyleGAN2 Models: [Awesome Pretrained StyleGAN2](https://github.com/justinpinkney/awesome-pretrained-stylegan2)   
  * Self-trained StyleGAN2 Model on Leaf Dataset: [A Database of Leaf Images](https://data.mendeley.com/datasets/hb74ynkjcn/1)   
  * Real-time implementation utilising [Colab's Python to Javascript APIs](https://colab.research.google.com/notebooks/snippets/advanced_outputs.ipynb)  
+
+#### References  
+
+[1] E. Richardson et al., “Encoding in Style: a StyleGAN Encoder for Image-to-Image Translation,” *arXiv:2008.00951 [cs]*, Apr. 2021, Accessed: Jun. 19, 2022. [Online]. Available: https://arxiv.org/abs/2008.00951  
+‌
+[2] D. Bau, S. Liu, T. Wang, J.-Y. Zhu, A. Torralba, and M. Csail, “Rewriting a Deep Generative Model,” *arXiv:2007.15646 [cs]*, Jul. 2020. Accessed: Jun. 19, 2022. [Online]. Available: https://arxiv.org/pdf/2007.15646
+
+[3] T. Broad, F. F. Leymarie, and M. Grierson, “Network Bending: Expressive Manipulation of Deep Generative Models,” *arXiv:2005.12420 [cs]*, Mar. 2021, Accessed: Jun. 19, 2022. [Online]. Available: https://arxiv.org/abs/2005.12420  
+
+

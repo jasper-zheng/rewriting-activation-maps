@@ -124,7 +124,7 @@ The current stage of the project only tested the proposed training system on lim
 
 #### Resources  
 
- * The StyleGAN2 implementation borrowed heavily from [moono/stylegan2-tf-2.x](https://github.com/moono/stylegan2-tf-2.x)     
+ * The StyleGAN2 Tensorflow 2.x implementation borrowed heavily from [moono/stylegan2-tf-2.x](https://github.com/moono/stylegan2-tf-2.x)     
  * Pre-trained StyleGAN2 Models: [Awesome Pretrained StyleGAN2](https://github.com/justinpinkney/awesome-pretrained-stylegan2)   
  * Self-trained StyleGAN2 Model on Leaf Dataset: [A Database of Leaf Images](https://data.mendeley.com/datasets/hb74ynkjcn/1)   
  * Real-time implementation utilising [Colab's Python to Javascript APIs](https://colab.research.google.com/notebooks/snippets/advanced_outputs.ipynb)  

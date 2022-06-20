@@ -10,6 +10,7 @@
 **An Encoder Network that Enables a Pre-trained StyleGAN2 Model to Perform Image-to-image Translation**  
 Jasper Zheng (Shuoyang) / 21009460  
 
+[GitHub Repository](https://github.com/jasper-zheng/rewriting-activation-maps)  
 
 This project proposed a novel training system appended to [StyleGAN2](https://github.com/NVlabs/stylegan2) architecture, enabling a pre-trained StyleGAN2 model to perform image-to-image translation, even if the input images are not in the original domain. The training system is based on an encoder network that downscales the generated images from a StyleGAN2 model and matches the distribution of the earlier activation maps in the same model (i.e. predict feature maps given a generated image). After training, the encoder network is migrated to the StyleGAN2 model.   
 

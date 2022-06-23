@@ -12,7 +12,7 @@ Jasper Zheng (Shuoyang) / 21009460
 
 [GitHub Repository](https://github.com/jasper-zheng/rewriting-activation-maps)  
 
-This project proposed a novel training system appended to [StyleGAN2](https://github.com/NVlabs/stylegan2) architecture, enabling a pre-trained StyleGAN2 model to perform image-to-image translation, even if the input images are not in the original domain. The training system is based on an encoder network that downscales the generated images from a StyleGAN2 model and matches the distribution of the earlier activation maps in the same model (i.e. predict feature maps given a generated image). After training, the encoder network is migrated to the StyleGAN2 model.   
+This project proposed a training system appended to [StyleGAN2](https://github.com/NVlabs/stylegan2) architecture, enabling a pre-trained StyleGAN2 model to perform image-to-image translation, even if the input images are not in the original domain. The training system is based on an encoder network that downscales the generated images from a StyleGAN2 model and matches the distribution of the earlier activation maps in the same model (i.e. predict feature maps given a generated image). After training, the encoder network is migrated to the StyleGAN2 model.   
 
 The proposed system was implemented on a couple of pre-trained models. And the results showed that it's able to create meaningful image-to-image translation different with [pix2pixHD](https://github.com/NVIDIA/pix2pixHD) and other state-of-the-art image translation models.  
 
@@ -108,7 +108,7 @@ As shown in Figure 02, after the encoder is trained, it is migrated to replace t
 
 Different from [CycleGAN](https://arxiv.org/abs/1703.10593) and [Pix2Pix](https://github.com/NVIDIA/pix2pixHD), our method can be migrated to most of the pre-trained StyleGAN2 models without any extra data. However, this method restricted the input images to domains that are similar to the pre-trained model. For example, an eye is generated only if the input image has an element that looks like an eye.  
 
-Besides, the latent vectors still function after the StyleGAN2 model is appended with the migrated encoder. Therefore, one input image may have different output depending on the latent vector, and it can perform latent space walking during the real-time inference.  
+~~Besides, the latent vectors still function after the StyleGAN2 model is appended with the migrated encoder. Therefore, one input image may have different output depending on the latent vector, and it can perform latent space walking during the real-time inference.~~  
 
 ## Future Study  
 

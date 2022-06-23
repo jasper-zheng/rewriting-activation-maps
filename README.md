@@ -55,7 +55,7 @@ As shown in Figure 01, the training system takes the output images from a StyleG
 <img src='./docs/graph_deployed_network.png'></img>  
 Figure 02: Deploy the Encoder  
 
-As shown in Figure 02, after the encoder is trained, it is migrated to replace the synthesise block before the specific layer. The assembled system takes images as input, and translates the images into the domain of the original StyleGAN2 model.  
+As shown in Figure 02, after the encoder is trained, it replaces the synthesise block before the specific layer. The assembled system takes images as input, and translates the images into the domain of the original StyleGAN2 model.  
 
 ## Results  
 

@@ -59,6 +59,13 @@ As shown in Figure 02, after the encoder is trained, it replaces the synthesise 
 
 ## Results  
 
+###### Real Feature Maps  
+<img src='./docs/real.png' width='400px'>
+
+
+###### Reproduced Feature Maps  
+<img src='./docs/fake.png' width='400px'>  
+
 ###### Network appended to model trained on [FFHQ](https://github.com/NVlabs/ffhq-dataset)   
 
 <table> 
